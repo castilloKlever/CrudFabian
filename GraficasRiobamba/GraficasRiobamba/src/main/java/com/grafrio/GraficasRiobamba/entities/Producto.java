@@ -19,71 +19,83 @@ public class Producto {
     private Long codigo;
     private String nombre;
     private String categoria;
- 
     private String descripcion;
     private int cantidad;
     private float precio;
     private UUID foto;
-/* METODOS SET Y GET PARA EL CAMPO CODIGO  */
-    public Long getCodigo() {
-        return codigo;
+
+    public  Producto(){
+    	
     }
-    public void setCodigo(Long codigo) {
-        this.codigo= codigo;
-    }
-/* METODOS SET Y GET PARA EL CAMPO NOMBRE  */   
+
+	public Producto(Long codigo, String nombre, String categoria, String descripcion, int cantidad, float precio,
+			UUID foto) {
+		super();
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.categoria = categoria;
+		this.descripcion = descripcion;
+		this.cantidad = cantidad;
+		this.precio = precio;
+		this.foto = foto;
+	}
+
+	public Long getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public int getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+
+	public float getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(float precio) {
+		this.precio = precio;
+	}
+
+	public UUID getFoto() {
+		return foto;
+	}
+
+	public void setFoto(UUID foto) {
+		this.foto = foto;
+	}
     
-    public String getNombre() {
-        return nombre;
-    }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-  /* METODOS SET Y GET PARA EL CAMPO CATEGORIA  */
-    public String getCategoria() {
-        return categoria;
-    }
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
- 
-    
- /* METODOS SET Y GET PARA EL CAMPO DESCRIPCION  */    
-    public String getDescripcion() {
-        return descripcion;
-    }
-    
-    public void setDescripcion(String descripcion) {
-        this.descripcion= descripcion;
-    }
-    
-    /* METODOS SET Y GET PARA EL CAMPO CANTIDAD  */    
-    public int getCantidad() {
-        return cantidad;
-    }
-    
-    public void setCantidad(int cantidad) {
-        this.cantidad= cantidad;
-    }
-      
-    
-    /* METODOS SET Y GET PARA EL CAMPO PRECIO  */    
-    public float getPrecio() {
-        return precio;
-    }
-    
-    public void setPrecio(float precio) {
-        this.precio= precio;
-    }
-      
-  /* METODOS SET Y GET PARA EL CAMPO FOTOGRAFIA */
-    
-    public UUID getFoto() {
-        return foto;
-    }
-    public void setFoto(UUID foto) {
-        this.foto = foto;
-    }    
     
     
 

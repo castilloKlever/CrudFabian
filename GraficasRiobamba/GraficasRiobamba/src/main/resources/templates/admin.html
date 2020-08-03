@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <title>ADMINISTRADOR</title>
     <link rel="stylesheet" href="/css/styleAdmin.css">
-    <link rel="stylesheet" href="/css/styleAgregarProducto.css">
-    <link rel="stylesheet" href="/css/styleCrud.css">
 </head>
 
 <body>
@@ -30,7 +28,6 @@
                              </a>
                       </div>
                </div>
-
                <div class="gestionar-producto">
                       <div class="icon">
                           <img src="/img/img-admin/boton3.png" alt="">
@@ -39,66 +36,27 @@
                             <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Agregar Producto</button>
                       </div>
                </div>
-
                <div class="gestionar-producto">
                       <div class="icon">
                           <img src="/img/img-admin/add1.png" alt="">
                       </div>
-
                </div>
                 <div class="gestionar-producto">
                       <div class="icon">
                           <img src="/img/img-admin/add2.png" alt="">
                       </div>
-
                </div>
                 <div class="gestionar-producto">
                       <div class="icon">
                           <img src="/img/img-admin/add3.png" alt="">
                       </div>
-
                </div>
-
                <div class="gestionar-producto">
                       <div class="icon">
                           <img src="/img/img-admin/add4.png" alt="">
                       </div>
 
                </div>
-
-
-                 <div class="overlay"   id="overlay">
-                        <div class="popup" id="popup">
-                            <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup">
-                            <img src="/img/img-admin/close.ico" alt="">
-                            </a>
-                            <h3 >Agregra Nuevo Producto</h3>
-                            <div class="formulario">
-                            <form action="#" th:action="@{/GraficasRiobamba/add}" th:object="${producto}" method="post"    >
-                              <input  placeholder="nombre">
-                                
-                              <select  name="categorias" id="categorias">
-                                    <option value="colores">Utiles Escolares</option>
-                                     <option value="cuaderno">Utiles de Oficina</option>
-                                      <option value="hojas">Papeleria</option>
-                                      <option value="hojas">Libros</option>
-                                       <option value="hojas">Cuadernos</option>
-
-                                </select>
-                              <textarea  name="descripcion" placeholder="descripción" ></textarea>
-                           
-                                <input type="text" name="cantidad" placeholder="cantidad">
-                                <input  type="text" name="precio" placeholder="precio">
-                                 <input  placeholder="imagen">
-
-                                <input value="Agregar Producto" id="boton"  >
-
-                             </form>
-                      </div>
-
-                        </div>
-                     </div>
-
            </div>
        </div>
        <div class="container">
@@ -107,10 +65,10 @@
                       
                       <div class="boton-sesion">
                             <div sec:authorize="isAuthenticated()">
-                           <a href="/GraficasRiobamba/logout">
-                          <button id="btn-cerrar-sesion" class="btn-cerrar-sesion">Cerrar Sesión</button>
-                         </a>
- </div>
+                                   <a href="/GraficasRiobamba/logout">
+                                        <button id="btn-cerrar-sesion" class="btn-cerrar-sesion">Cerrar Sesión</button>
+                                 </a>
+                            </div>
                           </div>
                       <div class="container-icon">
                           <div class="icon-sesion">
@@ -131,143 +89,82 @@
                             <div class="icon">
                                 <img src="/img/img-admin/notificacion1.png" id="img1" alt="">
                             </div>
-
                          </div>
                      </div>
                      <div class="notificacion" id="notificacion2" >
                          <div class="text-notificacion">
                              <h1>135 </h1>
                              <h3>Visitantes diarios</h3>
-
                          </div>
                          <div class="icon-notificacion">
                             <div class="icon">
                                  <img src="/img/img-admin/notificacion2.png" alt="">
                             </div>
-
                          </div>
                      </div>
                      <div class="notificacion" id="notificacion3">
                          <div class="text-notificacion">
                              <h1>90 </h1>
                              <h3>Productos Registrados</h3>
-
                          </div>
                          <div class="icon-notificacion ">
                             <div class="icon">
                                 <img src="/img/img-admin/notificacion3.png"  class="hovericons" alt="">
                             </div>
-
                          </div>
-
-
                      </div>
-
                   </div>
-
                   <div class="Titulo-Tabla">
                       <h1>PRODUCTOS REGISTRADOS EN EL SISTEMA </h1>
                   </div>
                   <div class="container-tabla">
                      <div class="tabla">
-               <div th:switch="${products}" class="container my-5">
+               <div th:switch="${productos}" class="container my-5">
                    <h2 th:case="null">No recipes yet!</h2>
                   <div th:case="*">
                       <table >
-                          <thead>
-                           <tr>
+                                  <thead>
+                                   <tr>
 
-                              <th>Nombre </th>
-                              <th>Categoría </th>
-                              <th>Descripción</th>
-                              <th>Cantidad</th>
-                              <th>Precio</th>
-                              <th>Imagen</th>
-                                 <div sec:authorize="isAuthenticated()">
-                                            <th>VER</th>
-                                            <th>EDITAR</th>
-                                            <th>ELIMINAR</th>
-                                 </div>
-
-
-                           </tr>
-                        </thead>
-
-                        <tbody>
-                                    <tr th:each="producto : ${products}">
-                                        <td th:text="${producto.nombre}"> </td>
-                                        <td th:text="${producto.categoria}"> </td>
-                                        <td th:text="${producto.descripcion}"> </td>
-                                        <td th:text="${producto.cantidad}"> </td>
-                                        <td th:text="${producto.precio}"> </td>
-                                        <td><img th:src="@{/pic/{id}(id=${producto.foto}+.jpg)}" width="80" class="rounded"></td>
-                                        <td>
-                                        <!-- STAR MODEL VIEW PRODUCT-->
-                       
-                                         <a  id="btn-view-producto" class="btn-view-producto" > <img src="/img/img-iconCrud/view.png" alt=""></a>
-
-                                         <div class="modal fade" th:id="modalLong+${producto.codigo}" tabindex="-1" role="dialog" aria-labelledby="detalleProducto" aria-hidden="true">
-  										 	<div class="modal-dialog" role="document">
-  										 	   <!-- STAR POPUD VIEW PRODUCT-->
-                                                <div class="overlay1"   id="overlay1">
-                                                            <div class="popup1" id="popup1">
-                                                                <a href="#" id="btn-cerrar-popup1" class="btn-cerrar-popup1">
-                                                                <img src="/img/img-admin/close.ico" alt="">
-                                                                </a>
-                                                                <h3 >DETALLES DEL PRODUCTO</h3>
-                                                                    <div class="modal-body">
-                                                                        <p th:text="${producto.nombre}"> </p>
-                                                                        <p th:text="${producto.categoria}"> </p>
-                                                                        <p th:text="${producto.descripcion}"> </p>
-                                                                        <p th:text="${producto.cantidad}"> </p>
-                                                                        <p th:text="${producto.precio}"> </p>
-                                               
-                                                                        <p><img th:src="@{/pic/{id}(id=${producto.foto}+.jpg)}" width="240" class="rounded"></p>
-                                                                        
-                                                                    </div>
-                                                            </div>
-                                                    </div>
-                                                     <!-- END  POPUD VIEW PRODUCT-->
+                                      <th>Nombre </th>
+                                      <th>Categoría </th>
+                                      <th>Descripción</th>
+                                      <th>Cantidad</th>
+                                      <th>Precio</th>
+                                      <th>Imagen</th>
+                                         <div sec:authorize="isAuthenticated()">
+                                                    <th>VER</th>
+                                                    <th>EDITAR</th>
+                                                    <th>ELIMINAR</th>
+                                         </div>
+                                   </tr>
+                                </thead>
+                                <tbody>
+                                            <tr th:each="producto : ${productos}">
+                                                <td th:text="${producto.nombre}"> </td>
+                                                <td th:text="${producto.categoria}"> </td>
+                                                <td th:text="${producto.descripcion}"> </td>
+                                                <td th:text="${producto.cantidad}"> </td>
+                                                <td th:text="${producto.precio}"> </td>
+                                                <td><img th:src="@{/pic/{id}(id=${producto.foto}+.jpg)}" width="80" class="rounded"></td>
+                                                <!-- START CRUD -->
 
 
+                                                <!-- END CRUD -->
 
-
-
-
-  											   </div>
-										 </div>
-                                        </td>
-                                    </tr>
+                                            </tr>
                                 </tbody>
                         </table>
                   </div>
-
                   </div>
-
                      </div>
 
                   </div>
-
-
 
             </div>
 
        </div>
    </section>
-
-<!--End Cantainers-->
-
-
-  <!--End section profile-->
-
-
-
-<!--LINKS JS -->
-    <script src="/js/jquery-3.4.1.min.js"></script>
-    <script src="/js/mainAdmin.js"></script>
-    <script src="/js/agregarProducto.js"></script>
-    <script src="/js/crud.js"></script>
-
 </div>
 </body>
 </html>
