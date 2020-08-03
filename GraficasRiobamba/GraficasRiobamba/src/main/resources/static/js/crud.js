@@ -1,19 +1,32 @@
-var btnAbrirPopup1 = document.getElementById('btn-view-producto'),
-	overlay1 = document.getElementById('overlay1'),
-	popup1 = document.getElementById('popup1'),
-    cerrarScroll = document.getElementsByTagName('html')[0],
-	btnCerrarPopup1 = document.getElementById('btn-cerrar-popup1');
+   
+function eliminar(codigo) {
+	console.log(codigo);
+	swal({
+		  title: "Esta seguro de Eliminar?",
+		  text: "Una vez eliminado no se prodra restablecer!",
+		  icon: "warning",
+		  buttons: true,
+		  dangerMode: true,
+		})
+		.then((OK) => {
+		  if (OK) {
+			  $.ajax({
+				 url:"/eliminar/"+codigo,
+				 success: function(res) {
+					console.log(res);
+				},			
+			  });
+		    swal("Poof! Registro eliminado!", {
+		      icon: "success",
+		    }).then((ok)=>{
+		    	if(ok){
+		    		location.href="/GraficasRiobamba/listar";
+		    	}
+		    });
+		  } 
+		});
+}
 
-btnAbrirPopup1.addEventListener('click', function(){
-	overlay1.classList.add('active');
-	popup1.classList.add('active');
-    cerrarScroll.style.overflow = 'hidden';
 
-});
 
-btnCerrarPopup1.addEventListener('click', function(e){
-	e.preventDefault();
-	overlay1.classList.remove('active');
-	popup1.classList.remove('active');
-    cerrarScroll.style.overflow = 'auto';
-});
+

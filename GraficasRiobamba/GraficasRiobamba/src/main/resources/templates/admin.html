@@ -165,6 +165,20 @@
                                                                       </td>
 
                                                               <!-- END UPDATE-->
+
+
+
+                                                                 <!-- START DELETE-->
+                                                                      <td>
+                                                                          
+                                                                          <a th:onclick="eliminar([[${producto.codigo}]])">
+                                                                              <img src="/img/img-admin/delete.png" alt="">
+                                                                              
+                                                                          </a>
+                                                                          
+                                                                      </td>
+
+                                                              <!-- END DELETE-->
                                                             
                                                               <!-- START CRUD -->
   
@@ -187,6 +201,10 @@
 
        </div>
    </section>
+
+    <script src="/js/jquery-3.4.1.min.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"> </script>
+	<script src="/js/crud.js"> </script>
 </div>
 </body>
 </html>

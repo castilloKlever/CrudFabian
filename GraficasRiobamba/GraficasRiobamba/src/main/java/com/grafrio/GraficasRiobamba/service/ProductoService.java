@@ -37,7 +37,7 @@ public class ProductoService implements IproductoService {
 
 	@Override
 	public void delete(Long id) {
-		// TODO Auto-generated method stub
+		data.deleteById(id);
 		
 	}
 

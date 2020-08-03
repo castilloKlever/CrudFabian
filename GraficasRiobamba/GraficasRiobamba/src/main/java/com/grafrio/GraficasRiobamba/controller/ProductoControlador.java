@@ -52,6 +52,8 @@ public class ProductoControlador {
 	 @PreAuthorize("hasAuthority('admin')")
 	 @GetMapping("/new")
 	 public String agregar(Model model) {
+		 List<Producto>producto=service.listar();
+		 model.addAttribute("productos", producto);
 		 model.addAttribute("producto", new Producto());
 		 return "new";
 	 }
@@ -77,7 +79,12 @@ public class ProductoControlador {
 		 model.addAttribute("producto",producto);
 		 return("new");
 	 }
-	 
+	 @PreAuthorize("hasAuthority('admin')")
+	 @GetMapping("/eliminar/{codigo}")
+	 public String delete( @PathVariable Long codigo, Model model) {
+		 service.delete(codigo);
+		 return"redirect:/GraficasRiobamba/listar";
+	 }
 	
 	}
 	
