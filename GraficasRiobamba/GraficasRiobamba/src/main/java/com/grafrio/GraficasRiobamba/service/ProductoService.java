@@ -22,7 +22,7 @@ public class ProductoService implements IproductoService {
 	@Override
 	public Optional<Producto> listarId(Long id) {
 		// TODO Auto-generated method stub
-		return null;
+		return data.findById(id);
 	}
 
 	@Override

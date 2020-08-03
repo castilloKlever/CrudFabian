@@ -32,11 +32,13 @@
                       <div class="icon">
                           <img src="/img/img-admin/boton3.png" alt="">
                       </div>
-                     <a href="/GraficasRiobamba/new" >
+                   
                       <div class="boton">
+                             <a href="/GraficasRiobamba/new" >
                             <button id="btn-gestionar-producto" class="btn-gestionar-producto"> Agregar Producto</button>
+                            </a>
                       </div>
-                         <a>
+                   
 
                </div>
                <div class="gestionar-producto">
@@ -150,7 +152,24 @@
                                                 <td th:text="${producto.cantidad}"> </td>
                                                 <td th:text="${producto.precio}"> </td>
                                                 <td><img th:src="@{/pic/{id}(id=${producto.foto}+.jpg)}" width="80" class="rounded"></td>
-                                                <!-- START CRUD -->
+                                                 <!-- START CRUD -->
+  
+                                                              <!-- START UPDATE-->
+                                                                      <td>
+                                                                          
+                                                                          <a th:href="@{/GraficasRiobamba/editar/}+${producto.codigo}">
+                                                                              <img src="/img/img-admin/update.png" alt="">
+                                                                              
+                                                                          </a>
+                                                                          
+                                                                      </td>
+
+                                                              <!-- END UPDATE-->
+                                                            
+                                                              <!-- START CRUD -->
+  
+
+                                                                <!-- END CRUD -->
 
 
                                                 <!-- END CRUD -->
