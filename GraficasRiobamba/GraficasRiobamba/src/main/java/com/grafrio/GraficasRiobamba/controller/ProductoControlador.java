@@ -8,8 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-
-
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -47,6 +48,29 @@ public class ProductoControlador {
 	     return "admin";
  
 	 }
+	 @PreAuthorize("hasAuthority('admin')")
+	 @GetMapping("/new")
+	 public String agregar(Model model) {
+		 model.addAttribute("producto", new Producto());
+		 return "new";
+	 }
+	 
+	 @PreAuthorize("hasAuthority('admin')")
+	 @RequestMapping("/listar")
+	 public String listar(Model model) {
+		List<Producto> productos = service.listar();
+		model.addAttribute("productos",productos);
+		 return "admin";
+	 }
+	 @PreAuthorize("hasAuthority('admin')")
+	 @PostMapping("/save")
+	 public String save (@Validated Producto p, Model model) {
+		 service.save(p);
+		 return"redirect:/GraficasRiobamba/listar";
+	 }
+	 
+	 
+	 
 	
 	}
 	

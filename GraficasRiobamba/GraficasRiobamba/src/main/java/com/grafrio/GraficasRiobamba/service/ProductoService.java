@@ -27,8 +27,12 @@ public class ProductoService implements IproductoService {
 
 	@Override
 	public int save(Producto p) {
-		// TODO Auto-generated method stub
-		return 0;
+		int res = 0;
+		Producto producto = data.save(p);
+		if(!producto.equals(null)) {
+			res = 1;
+		}
+		return res;
 	}
 
 	@Override
