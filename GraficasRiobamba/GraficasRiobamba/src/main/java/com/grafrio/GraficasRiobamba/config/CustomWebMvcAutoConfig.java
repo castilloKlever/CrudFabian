@@ -17,7 +17,7 @@ public class CustomWebMvcAutoConfig implements WebMvcConfigurer {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		String myExternalFilePath = "file:"+uploadDir+"/";
-		registry.addResourceHandler("/pic/**").addResourceLocations(myExternalFilePath);
+		registry.addResourceHandler("/GraficasRiobamba/pic/**").addResourceLocations(myExternalFilePath );
 	}
 		
 }

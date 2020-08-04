@@ -73,7 +73,7 @@
                             </a>
                             <h3 >Agregra Nuevo Producto</h3>
                             <div class="formulario">
-                            <form  th:action="@{/GraficasRiobamba/save}" th:object="${producto}" method="post"    >
+                            <form  th:action="@{/GraficasRiobamba/save}" th:object="${producto}" method="post" enctype="multipart/form-data"   >
                                     <div class="ocultar" >
                                          <input class="ocultar" type="text" th:field="*{codigo}" readonly="readonly" />
                                     </div>
@@ -95,7 +95,7 @@
                                  <h2>Ingrese el precio unitario del producto</h2>
                                 <input th:field="*{precio}" type="text" name="precio" >
                                 <h2>Carge una imagen  producto</h2>
-                                 <input  >
+                                <input type="file" name="file"  accept="image/*" class="form-control"/> 
 
                                 <input type="submit" value="Guardar" id="boton"  >
 

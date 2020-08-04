@@ -2,23 +2,26 @@ package com.grafrio.GraficasRiobamba.controller;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.grafrio.GraficasRiobamba.entities.Producto;
 import com.grafrio.GraficasRiobamba.interfaces.IproductoService;
 import com.grafrio.GraficasRiobamba.service.PictureService;
+
 
 
 @Controller
@@ -49,6 +52,13 @@ public class ProductoControlador {
 	     return "admin";
  
 	 }
+	 
+	 @RequestMapping("/index")
+	 public String customers(Model model) {
+		 List<Producto>producto=service.listar();
+		 model.addAttribute("productos", producto);
+	     return "index";
+	 }
 	 @PreAuthorize("hasAuthority('admin')")
 	 @GetMapping("/new")
 	 public String agregar(Model model) {
@@ -65,12 +75,35 @@ public class ProductoControlador {
 		model.addAttribute("productos",productos);
 		 return "admin";
 	 }
+	 
+	 
+	
+	 
 	 @PreAuthorize("hasAuthority('admin')")
 	 @PostMapping("/save")
-	 public String save (@Validated Producto p, Model model) {
-		 service.save(p);
+	 public String save (@Validated Producto p, Model model, BindingResult result , @RequestParam("file") MultipartFile file) {
+		 if (result.hasErrors()) {
+		        return "new";
+		     }
+		 UUID idPic = UUID.randomUUID();
+	     picService.uploadPicture(file, idPic);
+	     p.setFoto(idPic);
+	     service.save(p);  
 		 return"redirect:/GraficasRiobamba/listar";
 	 }
+	 
+	 
+	
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 	 
 	 @PreAuthorize("hasAuthority('admin')")
 	 @GetMapping("/editar/{codigo}")
