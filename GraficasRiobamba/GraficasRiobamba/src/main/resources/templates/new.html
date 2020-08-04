@@ -74,6 +74,9 @@
                             <h3 >Agregra Nuevo Producto</h3>
                             <div class="formulario">
                             <form  th:action="@{/GraficasRiobamba/save}" th:object="${producto}" method="post"    >
+                                    <div class="ocultar" >
+                                         <input class="ocultar" type="text" th:field="*{codigo}" readonly="readonly" />
+                                    </div>
                              <h2>Ingrese el nombre del producto</h2>
                               <input th:field="*{nombre}" type="text" >
                                  <h2>Ingrese la categoría del producto</h2>

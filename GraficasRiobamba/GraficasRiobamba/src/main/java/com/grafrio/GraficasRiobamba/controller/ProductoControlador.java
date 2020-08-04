@@ -75,16 +75,19 @@ public class ProductoControlador {
 	 @PreAuthorize("hasAuthority('admin')")
 	 @GetMapping("/editar/{codigo}")
 	 public String editar(@PathVariable Long codigo, Model model) {
+		 List<Producto> productos = service.listar();
+		 model.addAttribute("productos",productos);
+		 
 		 Optional<Producto>producto = service.listarId(codigo);
 		 model.addAttribute("producto",producto);
 		 return("new");
 	 }
 	 @PreAuthorize("hasAuthority('admin')")
 	 @GetMapping("/eliminar/{codigo}")
-	 public String delete( @PathVariable Long codigo, Model model) {
-		 service.delete(codigo);
-		 return"redirect:/GraficasRiobamba/listar";
-	 }
+		public String delete(@PathVariable long codigo,Model model) {
+			service.delete(codigo);
+			return "redirect:/GraficasRiobamba/listar";
+		}
 	
 	}
 	

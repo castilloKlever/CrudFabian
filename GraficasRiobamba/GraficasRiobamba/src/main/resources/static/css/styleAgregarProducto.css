@@ -26,7 +26,10 @@
 	display: flex;
 	visibility: visible;
 }
-
+.ocultar{
+	display: none;
+    visibility: hidden;
+}
 
 .popup {
 	background: #F8F8F8;
