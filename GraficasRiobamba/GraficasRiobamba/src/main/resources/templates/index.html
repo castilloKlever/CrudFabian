@@ -15,7 +15,7 @@
      <div class="container">
        <div class="row">
         <div class="smart-name">
-         <a href="" class="logo"><img src="img/img-logo/logo.png" alt=""></a>
+         <a href="" class="logo"><img src="/img/img-logo/logo.png" alt=""></a>
         </div>
         <div class="navbar">
            <ul>
@@ -103,11 +103,11 @@
   </section>
   <!--End About Smart -->
 
-  <!--Star Service Smart -->
+<!--Star Service Smart -->
   <section class="services" id="servicios">
      <div class="container">
         <div class="row">
-           <div class="section-title text-center">
+           <div class="section-title text-center" id="texto">
               <h1>Nuestros Servicios</h1>
 
            </div>
@@ -120,35 +120,25 @@
 
                      <div class="imagenService">
                          <div class="imgService">
-                            <a href="https://www.facebook.com/Espacio-Publicitario-1704421609575629" target="_blank"><img src="/img/img-service/service.jpg" alt=""> </a>
-                             
- 
+                             <img src="/img/img-service/service.png" alt="">
+
                          </div>
 
                      </div>
-
                      <div class="infoSerivice">
-                        <a href="https://www.facebook.com/Espacio-Publicitario-1704421609575629" target="_blank" > <h2 style="text-decoration: none"> ESPACIO PUBLICITARIO </h2> </a>
-                         
-                         <h3> La mejor forma de hacer publicidad</h3>
-                          <p> Un medio de comunicación en donde usted puede publicar los nuevos productos, las ofertas, los servicios y promociones que ofrece su negocio. </p>
-                    
-
-                     </div>
-
-                 </div>
-
-
-                <div class="boxService">
-
-
-
-                     <div class="infoSerivice">
-                         <h2> Lorem ipsum dolor </h2>
+                         <h5> Lorem ipsum dolor </h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, fugit Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, perspiciatis..</p>
 
                      </div>
 
+                 </div>
+                <div class="boxService">
+
+                     <div class="infoSerivice">
+                         <h5> Lorem ipsum dolor </h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, fugit Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, perspiciatis..</p>
+
+                     </div>
 
                      <div class="imagenService">
                          <div class="imgService">
@@ -165,14 +155,14 @@
 
                      <div class="imagenService">
                          <div class="imgService">
-                             <img src="/img/img-service/service1.png" alt="">
+                             <img src="/img/img-service/service.png" alt="">
 
                          </div>
 
                      </div>
 
                      <div class="infoSerivice">
-                         <h2> Lorem ipsum dolor </h2>
+                         <h5> Lorem ipsum dolor </h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, fugit Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, perspiciatis..</p>
 
                      </div>
@@ -211,14 +201,13 @@
                 
 
                            <tr th:each="producto : ${productos}">
-                              <td th:text="${producto.nombre}"> </td>
+                              
+                                <td><img th:src="@{/GraficasRiobamba/pic/{id}(id=${producto.foto}+.jpg)}" width="300" class="rounded"></td>  
+                                 <td th:text="${producto.nombre}"> </td>
                                         <td th:text="${producto.categoria}"> </td>
                                         <td th:text="${producto.descripcion}"> </td>
                                         <td th:text="${producto.cantidad}"> </td>
                                         <td th:text="${producto.precio}"> </td>
-                                        <p><img id="output" th:src="@{/pic/{id}(id=${producto.foto}+.jpg)}" width="80" class="rounded"></p>
-
-
                            </tr>
 
 

@@ -205,7 +205,34 @@
                                                 <td th:text="${producto.precio}"> </td>
                                                 <td><img th:src="@{/pic/{id}(id=${producto.foto}+.jpg)}" width="80" class="rounded"></td>
                                                 <!-- START CRUD -->
+<!-- START CRUD -->
+  
+                                                              <!-- START UPDATE-->
+                                                                      <td>
+                                                                          
+                                                                          <a th:href="@{/GraficasRiobamba/editar/}+${producto.codigo}">
+                                                                              <img src="/img/img-admin/update.png" alt="">
+                                                                              
+                                                                          </a>
+                                                                          
+                                                                      </td>
 
+                                                              <!-- END UPDATE-->
+
+
+
+                                                                 <!-- START DELETE  th:href="@{/GraficasRiobamba/eliminar/}+${producto.codigo}" -->
+                                                                       <td>
+																		<a th:onclick="eliminar([[${producto.codigo}]])" href="#">
+																		  <img src="/img/img-admin/delete.png" alt="">
+																		
+																		</a>
+																		
+																		</td>
+
+                                                              <!-- END DELETE-->
+                                                            
+                                                              <!-- START CRUD -->
 
                                                 <!-- END CRUD -->
 

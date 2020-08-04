@@ -19,37 +19,41 @@ nav{
 }
 
 .nav1{
-    width: 100%;
-  height: 100px;
-  color:black;
-    
-    background: rgba(255,255,255,0.9);
-background: -moz-linear-gradient(left, rgba(255,255,255,0.9) 0%, rgba(217,38,28,0.9) 24%, rgba(172,32,54,0.9) 40%, rgba(64,18,115,0.9) 78%, rgba(2,10,150,0.9) 100%);
-background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,0.9)), color-stop(24%, rgba(217,38,28,0.9)), color-stop(40%, rgba(172,32,54,0.9)), color-stop(78%, rgba(64,18,115,0.9)), color-stop(100%, rgba(2,10,150,0.9)));
-background: -webkit-linear-gradient(left, rgba(255,255,255,0.9) 0%, rgba(217,38,28,0.9) 24%, rgba(172,32,54,0.9) 40%, rgba(64,18,115,0.9) 78%, rgba(2,10,150,0.9) 100%);
-background: -o-linear-gradient(left, rgba(255,255,255,0.9) 0%, rgba(217,38,28,0.9) 24%, rgba(172,32,54,0.9) 40%, rgba(64,18,115,0.9) 78%, rgba(2,10,150,0.9) 100%);
-background: -ms-linear-gradient(left, rgba(255,255,255,0.9) 0%, rgba(217,38,28,0.9) 24%, rgba(172,32,54,0.9) 40%, rgba(64,18,115,0.9) 78%, rgba(2,10,150,0.9) 100%);
-background: linear-gradient(to right, rgba(255,255,255,0.9) 0%, rgba(217,38,28,0.9) 24%, rgba(172,32,54,0.9) 40%, rgba(64,18,115,0.9) 78%, rgba(2,10,150,0.9) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#020a96', GradientType=1 );
 
+background:transparent;
+    width: 100%;
+  height: 80px;
+
+ 
 
 }
 
 .nav2{
-  background: rgba(255,255,255,1);
-background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(217,38,28,1) 24%, rgba(172,32,54,1) 40%, rgba(64,18,115,1) 78%, rgba(2,10,150,1) 100%);
-background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(24%, rgba(217,38,28,1)), color-stop(40%, rgba(172,32,54,1)), color-stop(78%, rgba(64,18,115,1)), color-stop(100%, rgba(2,10,150,1)));
-background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(217,38,28,1) 24%, rgba(172,32,54,1) 40%, rgba(64,18,115,1) 78%, rgba(2,10,150,1) 100%);
-background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(217,38,28,1) 24%, rgba(172,32,54,1) 40%, rgba(64,18,115,1) 78%, rgba(2,10,150,1) 100%);
-background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(217,38,28,1) 24%, rgba(172,32,54,1) 40%, rgba(64,18,115,1) 78%, rgba(2,10,150,1) 100%);
-background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(217,38,28,1) 24%, rgba(172,32,54,1) 40%, rgba(64,18,115,1) 78%, rgba(2,10,150,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#020a96', GradientType=1 );
+  background: white;
+   height: 90px;
+  color:black;
     box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
-   height: 100px;
-  color:#000;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,.5);
-    z-index: 100;
+ 
 }
+.nav2 #enlace-inicio{
+    color:black;
+}
+.nav2  #enlace-nosotros {
+    color:black;
+}
+
+.nav2 #enlace-servicio {
+    color:black;
+}
+
+.nav2  #enlace-contacto{
+    color:black;
+}
+.nav2  #enlace-catalogo{
+    color:black;
+}
+
+
  .section-title{
 
     flex: 0 0 100%;
@@ -141,26 +145,18 @@ header .navbar ul{
 header .navbar ul li{
     display: inline-block;
     margin-left: 35px;
+     color:white ;
 }
 header .navbar ul li a{
     font-size: 15px;
     text-decoration: none;
     line-height: 72px;
-    color: white;
+color:white;
     display: block;
     font-weight: 600;
     position: relative;
 }
-header .navbar ul li a::before{
-    content: '';
-    height: 3px;
-    background-color: white;
-    width: 0%;
-    position: absolute;
-    left: 0px;
-    bottom: -1px;
-    transition: all .5s ease ;
-}
+
 header .navbar ul li a:hover::before{
     width: 100%;
     left: 0;
@@ -215,26 +211,25 @@ header .navbar ul li a.active::before{
     flex: 0 0 75%;
     max-width: 75%;
     padding-left: 35px;
-    border-left: 5px solid black;
+    border-left: 5px solid white;
     margin-top: -50px;
-    
 }
 .home .home-content .block h6{
-     color: black;
+     color: white;
     font-size: 18px;
     font-weight: 500;
     margin: 0;
     padding: 0;
 }
 .home .home-content .block h1{
-    color: black;
+    color: white;
     font-size: 60px;
     font-weight: 600;
     margin: 0;
     padding: 0;
 }
 .home .home-content .block h3{
-    color: black;
+    color: white;
     font-size: 25px;
     font-weight: 500;
     margin: 0;
@@ -245,8 +240,8 @@ header .navbar ul li a.active::before{
 }
 .home .home-content .block .cv-btn a{
     border-radius: 4px;
-    color: black;
-    border: 1px solid black;
+    color: white;
+    border: 1px solid white;
     padding: 12px 25px;
     text-decoration: none;
     display:inline-block;
@@ -258,8 +253,8 @@ header .navbar ul li a.active::before{
 
 }
 .home .home-content .block .cv-btn a:hover{
-    background-color: #D9261C;
-    color: white;
+    background-color: white;
+    color: black;
 
 }
 /*     **********************************************************************************************************************************************                                                   STYLE SECTION ABOUT SMART
@@ -414,9 +409,30 @@ header .navbar ul li a.active::before{
 
 /**********************************************************************************************************************************************                                                   STYLE SECTION SERVICES SMART
 ***************************************************************************************************************************************++++*/
+#texto h1{
+    color: white;
+}
 .services{
-    background: #f5f8fd;
+    background-image: url(../img/img-fondos/service.jpg);
+    background-size: cover;
+    background-position: center;
+    
+    background-attachment: fixed;
+    position: relative;
+     
     padding: 100px 0px 70px;
+
+}
+
+.services:before{
+   content:'';
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.6);
+
 
 }
 
@@ -438,17 +454,13 @@ header .navbar ul li a.active::before{
 .services .service-content .boxService{
     width: 100%;
     height: auto;
-    background: white;
+    background: transparent;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     margin-bottom: 30px;
 
-    background-image: url(../img/img-fondos/fondo1.jpg);
-
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+  
     position: relative;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -460,7 +472,7 @@ header .navbar ul li a.active::before{
     width: 49%;
     height: 250px;
 
-
+ ;
     text-align:center;
      padding-top: 20px;
 }
@@ -470,7 +482,7 @@ header .navbar ul li a.active::before{
     height: 90%;
 
      margin:0px auto;
-
+ border: 1px solid white ;
     background-size: 100vw 100vh;
     background-attachment: fixed;
 
@@ -493,21 +505,24 @@ header .navbar ul li a.active::before{
     padding: 50px;
 
     text-align: center;
+    z-index: 100;
+    color: white;
 
 }
 
-.services .service-content .boxService .infoSerivice h2{
-    font-size: 25px;
+.services .service-content .boxService .infoSerivice h5{
+    font-size: 16px;
     font-weight: 600;
-    color: black;
     margin: 0;
+
+
 }
 
 .services .service-content .boxService .infoSerivice p{
-     font-size: 18px;
+     font-size: 15px;
     font-weight: 400;
     line-height: 24px;
-    color: #838383;
+     color: white;
     margin: 10px 0 10px;
 
 }
